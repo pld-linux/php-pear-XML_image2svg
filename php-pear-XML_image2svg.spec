@@ -28,7 +28,7 @@ file, or you can take the encoded file as a return value, using the
 get() method. Due to the encoding by base64, the SVG files will
 increase approx. 30% in size compared to the conventional image.
 
-This class has in PEAR status: %{_status}.
+In PEAR status of this package is: %{_status}.
 
 %description -l pl
 Ta klasa konwertuje rysunki, takie formaty jak JPEG, PNG czy TIFF do
