@@ -8,11 +8,12 @@ Summary:	%{_pearname} - image to SVG conversion
 Summary(pl):	%{_pearname} - konwersja rysunków do SVG
 Name:		php-pear-%{_pearname}
 Version:	0.1
-Release:	3
+Release:	4
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	1881e3e89f552f7959ab4f0f7cf52cde
+Patch0:		%{name}-path_fix.patch
 URL:		http://pear.php.net/package/XML_image2svg/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
@@ -43,6 +44,7 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
