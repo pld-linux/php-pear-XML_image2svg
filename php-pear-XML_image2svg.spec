@@ -1,6 +1,7 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		XML
 %define		_subclass	image2svg
+%define		_status		stable
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - image to SVG conversion
@@ -10,8 +11,8 @@ Version:	0.1
 Release:	2
 License:	PHP 2.02
 Group:		Development/Languages/PHP
-# Source0-md5:	1881e3e89f552f7959ab4f0f7cf52cde
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
+# Source0-md5:	1881e3e89f552f7959ab4f0f7cf52cde
 URL:		http://pear.php.net/package/XML_image2svg/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
@@ -27,6 +28,8 @@ file, or you can take the encoded file as a return value, using the
 get() method. Due to the encoding by base64, the SVG files will
 increase approx. 30% in size compared to the conventional image.
 
+This class has in PEAR status: %{_status}.
+
 %description -l pl
 Ta klasa konwertuje rysunki, takie formaty jak JPEG, PNG czy TIFF do
 samodzielnej reprezentacji SVG. Rysunek jest kodowany przy u¿yciu
@@ -35,6 +38,8 @@ kompletnego pliku SVG, który jest oparty na predefiniowanym, ³atwym do
 zaadaptowania pliku tymczasowym, lub mo¿esz wzi±æ zakodowany plik jako
 warto¶æ zwrotn±, u¿ywaj±c do metody get(). Poprzez zakodowanie przez
 base64, pliki SVG s± ok. 30% wiêksze ni¿ konwencjonalne rysunki.
+
+Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c
