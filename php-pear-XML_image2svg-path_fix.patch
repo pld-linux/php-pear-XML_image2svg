@@ -1,0 +1,18 @@
+--- php-pear-XML_image2svg-0.1.orig/XML_image2svg-0.1/image2svg.php	2004-12-04 23:17:51.182102960 +0100
++++ php-pear-XML_image2svg-0.1/XML_image2svg-0.1/image2svg.php	2004-12-04 23:18:07.546615176 +0100
+@@ -55,7 +55,7 @@
+ * @author   Urs Gehrig <urs@circle.ch> 
+ */
+ require_once( "PEAR.php") ;
+-require_once( "HTML/IT.php") ;	
++require_once( "HTML/Template/IT.php") ;	
+ 
+ class XML_image2svg extends PEAR {
+ 
+@@ -293,4 +293,4 @@
+         $this->_PEAR();
+     }    
+ }
+-?>
+\ No newline at end of file
++?>
