@@ -1,9 +1,10 @@
 %include	/usr/lib/rpm/macros.php
-%define         _class          XML
-%define         _subclass       image2svg
+%define		_class		XML
+%define		_subclass	image2svg
 %define		_pearname	%{_class}_%{_subclass}
-Summary:	%{_pearname} - Image to SVG conversion
-Summary(pl):	%{_pearname} - Konwersja rysunków do SVG
+
+Summary:	%{_pearname} - image to SVG conversion
+Summary(pl):	%{_pearname} - konwersja rysunków do SVG
 Name:		php-pear-%{_pearname}
 Version:	0.1
 Release:	2
