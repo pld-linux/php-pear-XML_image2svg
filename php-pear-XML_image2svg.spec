@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - image to SVG conversion
-Summary(pl.UTF-8):   %{_pearname} - konwersja rysunków do SVG
+Summary(pl.UTF-8):	%{_pearname} - konwersja rysunków do SVG
 Name:		php-pear-%{_pearname}
 Version:	0.1
 Release:	6
@@ -47,7 +47,7 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
