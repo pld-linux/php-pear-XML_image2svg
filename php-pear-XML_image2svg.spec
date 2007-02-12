@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - image to SVG conversion
-Summary(pl):	%{_pearname} - konwersja rysunków do SVG
+Summary(pl.UTF-8):   %{_pearname} - konwersja rysunkÃ³w do SVG
 Name:		php-pear-%{_pearname}
 Version:	0.1
 Release:	6
@@ -34,20 +34,20 @@ increase approx. 30% in size compared to the conventional image.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
+%description -l pl.UTF-8
 Ta klasa konwertuje rysunki, takie formaty jak JPEG, PNG czy TIFF do
-samodzielnej reprezentacji SVG. Rysunek jest kodowany przy u¿yciu
-natywnej funkcji encode_base64() PHP. Mo¿esz z powrotem wróciæ do
-kompletnego pliku SVG, który jest oparty na predefiniowanym, ³atwym do
-zaadaptowania pliku tymczasowym, lub mo¿esz wzi±æ zakodowany plik jako
-warto¶æ zwrotn±, u¿ywaj±c do metody get(). Poprzez zakodowanie przez
-base64, pliki SVG s± ok. 30% wiêksze ni¿ konwencjonalne rysunki.
+samodzielnej reprezentacji SVG. Rysunek jest kodowany przy uÅ¼yciu
+natywnej funkcji encode_base64() PHP. MoÅ¼esz z powrotem wrÃ³ciÄ‡ do
+kompletnego pliku SVG, ktÃ³ry jest oparty na predefiniowanym, Å‚atwym do
+zaadaptowania pliku tymczasowym, lub moÅ¼esz wziÄ…Ä‡ zakodowany plik jako
+wartoÅ›Ä‡ zwrotnÄ…, uÅ¼ywajÄ…c do metody get(). Poprzez zakodowanie przez
+base64, pliki SVG sÄ… ok. 30% wiÄ™ksze niÅ¼ konwencjonalne rysunki.
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
@@ -56,7 +56,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
