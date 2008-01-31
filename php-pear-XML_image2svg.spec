@@ -8,7 +8,7 @@ Summary:	%{_pearname} - image to SVG conversion
 Summary(pl.UTF-8):	%{_pearname} - konwersja rysunków do SVG
 Name:		php-pear-%{_pearname}
 Version:	0.1
-Release:	6
+Release:	7
 Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
