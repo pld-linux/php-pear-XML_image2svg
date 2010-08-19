@@ -1,20 +1,17 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		XML
 %define		_subclass	image2svg
-%define		_status		stable
+%define		_status		beta
 %define		_pearname	%{_class}_%{_subclass}
-
 Summary:	%{_pearname} - image to SVG conversion
 Summary(pl.UTF-8):	%{_pearname} - konwersja rysunków do SVG
 Name:		php-pear-%{_pearname}
-Version:	0.1
-Release:	7
-Epoch:		0
+Version:	0.1.1
+Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	1881e3e89f552f7959ab4f0f7cf52cde
-Patch0:		%{name}-path_fix.patch
+# Source0-md5:	77c8e95bdfa451a0dab40f5fe6057307
 URL:		http://pear.php.net/package/XML_image2svg/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -22,6 +19,9 @@ BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# exclude optional dependencies
+%define		_noautoreq	pear(HTML/Template/IT.*)
 
 %description
 The class converts images, such as of the format JPEG, PNG and GIF to
@@ -49,9 +49,9 @@ Ta klasa ma w PEAR status: %{_status}.
 Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-AutoReq:	no
+Requires:	%{name} = %{version}-%{release}
 AutoProv:	no
+AutoReq:	no
 
 %description tests
 Tests for PEAR::%{_pearname}.
@@ -61,8 +61,8 @@ Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
-cd ./%{php_pear_dir}/%{_class}
-%patch0 -p2
+
+rm .%{php_pear_dir}/package.php
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -72,9 +72,14 @@ install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
+	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
+fi
+
 %files
 %defattr(644,root,root,755)
-%doc install.log
+%doc install.log optional-packages.txt
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}/*.php
 
